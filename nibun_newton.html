@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>数値計算シミュレータ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraph.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/1.1.0/jsxgraphcore.min.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <button id="startBtn">START</button>
+    <button id="resetBtn">RESET</button>
+
+    <div class="radio-group">
+      <label><input type="radio" name="method" value="bisection" checked /> 二分法</label>
+      <label><input type="radio" name="method" value="newton" /> ニュートン法</label>
+    </div>
+
+    <div class="radio-group">
+      <label>許容誤差</label>
+      <label><input type="radio" name="tolerance" value=1 checked /> 1</label>
+      <label><input type="radio" name="tolerance" value=0.1 /> 0.1</label>
+      <label><input type="radio" name="tolerance" value=0.01 /> 0.01</label>
+    </div>
+
+    <label for="equation">数式</label>
+    <div class="input-row">
+      <span>y =</span>
+      <input type="text" id="equation" placeholder="例: x*x - 2" />
+    </div>
+
+    <label for="pointA">● 点A</label>
+    <div class="input-row">
+      <span>x =</span>
+      <input type="text" id="pointA" placeholder="例: 4" />
+    </div>
+
+    <label for="pointB">● 点B（二分法のみ）</label>
+    <div class="input-row">
+      <span>x =</span>
+      <input type="text" id="pointB" placeholder="例: -2" />
+    </div>
+
+    <label>計算結果</label>
+    <div class="result-box" id="result"></div>
+
+    <label>計算回数</label>
+    <div class="result-box" id="repetition"></div>
+  </div>
+
+  <div class="jxgbox">
+    <div id="graph" class="graph"></div>
+  </div>
+
+  <script src="graph.js"></script>
+</body>
+</html>
