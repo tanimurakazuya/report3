@@ -10,8 +10,8 @@ let xAxis = board.create('axis', [[-graphSize, 0], [graphSize, 0]], {name: 'X', 
 let yAxis = board.create('axis', [[0, -graphSize], [0, graphSize]], {name: 'Y', strokeColor: 'black'});
 //軸タイトルを表示
 let text_css = 'font-family: "Times New Roman", Times, "serif"; font-style: italic';
-board.create('text', [graphSize-0.2, 0.2, 'x'],{ fontSize: 16, cssStyle: text_css, fixed: true });
-board.create('text', [0.1, graphSize-0.2, 'y'],{ fontSize: 16, cssStyle: text_css, fixed: true });
+board.create('text', [graphSize-1, 1, 'x'],{ fontSize: 16, cssStyle: text_css, fixed: true });
+board.create('text', [1, graphSize-1, 'y'],{ fontSize: 16, cssStyle: text_css, fixed: true });
 
 let currentGraph = null;
 let currentA = null;
@@ -334,7 +334,7 @@ function graphAnimation() {
   document.querySelector('#repetition').textContent = '---';
 }
 
-// reset
+// グラフのリセット
 function graphReset(){
   if (currentGraph !== null) {
     board.removeObject(currentGraph);
