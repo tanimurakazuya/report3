@@ -378,7 +378,6 @@ function graphReset(){
   }
   document.querySelector('#result').textContent = '---';
   document.querySelector('#repetition').textContent = '---';
-  reset = false;
 }
 
 // STARTボタンにイベント追加
@@ -392,6 +391,7 @@ window.addEventListener('DOMContentLoaded', function() {
     });
     resetBtn.addEventListener('click', function(){
       reset = true;
+      graphReset();
     });
   }
 });
