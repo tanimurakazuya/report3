@@ -187,10 +187,11 @@ function graphAnimation() {
             currentCLine = null;
           }
           let pointCValue = (pointAValue + pointBValue) / 2;
-          currentC = board.create('point', [pointCValue, 0], { name: 'C', color: 'green' });
+          currentC = board.create('point', [pointCValue, 0], { name: 'C', color: 'green', fixed: true});
           currentCLine = board.create('segment', [[pointCValue, 0], [pointCValue, f(pointCValue)]], {
             strokeColor: 'green',
-            dash: 2
+            dash: 2,
+            fixed: true
           });
           await sleep(sleepTime);
           if (reset) {
@@ -211,23 +212,25 @@ function graphAnimation() {
               pointAValue = pointCValue;
               board.removeObject(currentA);
               currentA = null;
-              currentA = board.create('point', [pointAValue, 0], { name: 'A', color: 'red' });
+              currentA = board.create('point', [pointAValue, 0], { name: 'A', color: 'red', fixed: true});
               board.removeObject(currentALine);
               currentALine = null;
               currentALine = board.create('segment', [[pointAValue, 0], [pointAValue, f(pointAValue)]], {
                 strokeColor: 'red',
-                dash: 2
+                dash: 2,
+                fixed: true
               });
             } else {
               pointBValue = pointCValue;
               board.removeObject(currentB);
               currentB = null;
-              currentB = board.create('point', [pointBValue, 0], { name: 'B', color: 'blue' });
+              currentB = board.create('point', [pointBValue, 0], { name: 'B', color: 'blue', fixed: true});
               board.removeObject(currentBLine);
               currentBLine = null;
               currentBLine = board.create('segment', [[pointBValue, 0], [pointBValue, f(pointBValue)]], {
                 strokeColor: 'blue',
-                dash: 2
+                dash: 2,
+                fixed: true
               });
             }
           }else if(f(pointCValue) < 0){
@@ -235,23 +238,25 @@ function graphAnimation() {
              pointAValue = pointCValue;
               board.removeObject(currentA);
               currentA = null;
-              currentA = board.create('point', [pointAValue, 0], { name: 'A', color: 'red' });
+              currentA = board.create('point', [pointAValue, 0], { name: 'A', color: 'red', fixed: true});
               board.removeObject(currentALine);
               currentALine = null;
               currentALine = board.create('segment', [[pointAValue, 0], [pointAValue, f(pointAValue)]], {
                 strokeColor: 'red',
-                dash: 2
+                dash: 2,
+                fixed: true
               });
             } else {
               pointBValue = pointCValue;
               board.removeObject(currentB);
               currentB = null;
-              currentB = board.create('point', [pointBValue, 0], { name: 'B', color: 'blue' });
+              currentB = board.create('point', [pointBValue, 0], { name: 'B', color: 'blue', fixed: true});
               board.removeObject(currentBLine);
               currentBLine = null;
               currentBLine = board.create('segment', [[pointBValue, 0], [pointBValue, f(pointBValue)]], {
                 strokeColor: 'blue',
-                dash: 2
+                dash: 2,
+                fixed: true
               });
             }
           }
@@ -317,10 +322,11 @@ function graphAnimation() {
           board.removeObject(tangentCGlider);
           board.removeObject(tangentXpoint);
           pointAValue = tangentXValue;
-          currentA = board.create('point', [pointAValue, 0], { name: 'A', color: 'red' });
+          currentA = board.create('point', [pointAValue, 0], { name: 'A', color: 'red', fixed: true});
           currentALine = board.create('segment', [[pointAValue, 0], [pointAValue, f(pointAValue)]], {
             strokeColor: 'red',
-            dash: 2
+            dash: 2,
+            fixed: true
           });
         }
         document.querySelector('#result').textContent = '---';
